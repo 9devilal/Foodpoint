@@ -1,0 +1,55 @@
+<section class = "cart">
+  
+    <%if(session.cart){%>
+
+    <div class ="order container mx-auto mt-10 xl:w-1/2">
+        <div class="flex items-center">
+         <img src="/img/cart.png" class="mr-4">   
+        <h1 class="font-bold text-xs md:text-2xl"><U>Order</U> <U>Summary</U></h1>
+        </div>
+        <div class="order-list">
+
+            <% for(let Item of Object.values(session.cart.items)){%>
+            <div class ="flex items-center my-4">
+                <img src="/img/<%=Item.item.image%>" class="w-24">
+                <div class = "flex-1 ml-4 text-xs md:text-lg">
+                    <h1><%=Item.item.name%></h1>
+                    <span><%=Item.item.size%></span>
+                </div>
+                <span class = "flex-1 text-xs md:text-lg"><%=Item.qty%> pcs</span>
+                <span class ="font-bold text-xs md:text-lg">RS <%=Item.qty * Item.item.price%></span>
+            </div>
+            <%}%>
+        </div>
+
+        <hr>
+     <!--for total amount -->
+        <div class="text-right py-6">
+            <div>
+                <span class="text-xs md:text-lg font-bold">Total : </span>
+                <span class="amount text-xs md:text-2xl ml-2">Rs <%=session.cart.totalPrice%> </span>
+            </div>
+            <div>
+                <form action="/orders" method="POST" class="mt-6">
+                    <input name="phone" class="border border-white-400  bg-transparent p-2 w-1/2 mb-4" type="text" placeholder="Phone number">
+                    <input name="address" class="border border-white-400 bg-transparent p-2 w-1/2 mb-4" type="text" placeholder="Address">
+                    <div>
+                        <button type="submit" class="btn px-6 py-2 rounded-full font-bold">Checkout !</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%} else {%>
+    <div class = "empty-cart">
+        <div class = "container mx-auto text-center">
+            <h1 class="text-6xl font-bold">Nothing in here!! ((:        
+                Add few items from menu </h1>
+    
+                <a href="/" class ="inline-block px-6 py-2 my-6 rounded-full btn">Go back !</a>
+        </div>
+    
+    </div>
+    <%}%>
+
+</section>

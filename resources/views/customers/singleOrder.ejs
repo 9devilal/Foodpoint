@@ -1,0 +1,24 @@
+<section class="status mt-16">
+  <div class="container mx-auto text-xs md:text-xs md:text-xl">
+      <div class="status-section md:w-2/3 mx-auto">
+        <div class="flex items-center justify-between mb-4" >
+            <h1 class="text-xs md:text-xl font-bold">Track delivery status</h1>
+            <h6 class="border border-white-300 rounded-full py-1 px-2 text-green-600"><%=order._id%></h6>
+            <input id="hiddenInput" type="hidden" value="<%=JSON.stringify(order)%>">
+        </div>
+      <hr>
+
+        <ul>
+            <li class="status_line text-xs md:text-xl pb-16 mt-8" data-value="order_placed"><span class="ml-4"> Order Placed</span></li>
+            <li class="status_line text-xs md:text-xl pb-16" data-value="confirmed"><span class="ml-4"> Order In process</span></li>
+            <li class="status_line text-xs md:text-xl pb-16" data-value="prepared"><span class="ml-4"> Order In kitchen</span></li>
+            <li class="status_line text-xs md:text-xl pb-16" data-value="delivered"><span class="ml-4"> Out for delivery</span></li>
+            <li class="status_line text-xs md:text-xl pb-16" data-value="completed"><span class="ml-4"> Completed</span></li>
+        </ul>
+
+
+      </div>
+
+  </div>
+
+</section>

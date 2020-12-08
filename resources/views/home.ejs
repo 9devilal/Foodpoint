@@ -1,0 +1,58 @@
+
+    <section class="hero">
+        <div class = "container mx-auto flex items-center my-12 justify-between py-4">
+            <div class="w-1/2">
+               <p  class = "text-3xl md:text-6xl">Hey Foodie!! <br>Feeling hungry!!</p>
+               <button class = "px-6 py-2  mt-6 rounded-full font-bold btn">Order now!</button>
+            </div>
+            <div class = "w-1/2 ">
+                  <img src="/img/biryani.jpeg" class = "inline-block rounded-full">
+            </div>
+        </div>
+
+    </section>
+    <section class = "menu container mx-auto py-10">
+     <p>All items</p>
+     <div class = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 row-gap-16">
+        <%items.forEach(
+            function(items){%>
+                   
+                <div class = "w-full md:w-64">
+                    <img class="h-30 mx-auto mb-2" src="/img/<%=items.image%>">
+                    <div class="text-center mb-2">
+                        <h2 class="mb-2 text-lg"><%=items.name%></h2>
+                        <span class="names py-1 px-2 rounded-full uppercase text-xs"><%=items.size%></span>
+                    
+                        <div class = "flex items-center justify-around my-4">
+                            <span class = "font-bold">Rs <%=items.price%></span>
+                            <%if(!user){%>
+                                <button data-item="<%=JSON.stringify(items)%>" class = "add-to-guest px-4 py-1 rounded-full ml-3">
+                                    <span>+</span>
+                                    <span class = "ml-2">Add</span>
+                                </button>
+                        <%}else if(user.role === 'customer'){%>
+
+                            <button data-item="<%=JSON.stringify(items)%>" class = "add-to-cart px-4 py-1 rounded-full ml-3">
+                                <span>+</span>
+                                <span class = "ml-2">Add</span>
+                            </button>
+
+                            
+                            <%}else{%>
+                                <button data-item="<%=JSON.stringify(items)%>" class = "add-to-guest px-4 py-1 rounded-full ml-3">
+                                    <span>+</span>
+                                    <span class = "ml-2">Add</span>
+                                </button>
+
+                                <%}%>
+                    </div>
+                    </div>
+                </div>
+
+
+            
+
+       <% })%>
+       
+     </div>
+    </section>

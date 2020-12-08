@@ -1,0 +1,131 @@
+@import './variables' ;
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss';
+
+body {
+    font-family :'JetBrains Mono' ,sans-serif;
+    font-size: large;
+    -webkit-font-smoothing :antialiased ;
+    color :$wite;
+    background-color: $back;
+}
+nav #logo {
+    background: #26ae60;
+}
+nav ul :last-child a {
+    background:  #26ae60;
+    &:hover {
+        background:#218F76;
+    }
+}
+nav li a{
+    transition: $smooth;
+    &:hover{
+    color:#26ae60;
+    }
+}
+.names{
+    background: #218F76;
+}
+.add-to-cart{
+   border : 2px solid $over ;
+   transition: $smooth;
+   &:hover {
+       color :$back;
+       background: $over;
+   }
+   &:focus {
+       outline: none;
+   }
+}
+.add-to-guest{
+    border : 2px solid $over ;
+    transition: $smooth;
+    &:hover {
+        color :$back;
+        background: $over;
+    }
+    &:focus {
+        outline: none;
+    }
+ }
+.btn {
+    border : 2px solid $over ;
+   transition: $smooth;
+   background: $over;
+   &:hover {
+       color :$wite;
+       background: $back;
+     
+   }
+}
+U {
+    color :$over;
+}
+.amount{
+    color:$over;
+}
+section.login{
+    min-height: calc(100vh - 80px);
+    a {
+        color :$over;
+    }
+}
+
+section.register{
+    min-height: calc(100vh - 80px);
+    a {
+        color :$over;
+    }
+}
+#cartCounter{
+
+    color :black;
+    font-weight: 800;
+}
+
+a.link{
+    color:$over;
+}
+
+.worker-dashboard{
+
+    color:$over;
+    font-weight: bold;
+}
+
+.status-box{
+    color:#EA7773;
+    background: $back;
+}
+.status-section ul li span{
+    position: relative;
+}
+.status-section ul li span:before {
+    content:'\f560';
+    font-family: "Line Awesome Free";
+    font-size:32px;
+    font-weight: 600;
+    color:inherit;
+    top:-10%;
+    
+    
+}
+.status-section ul li.done {
+    color:orangered;
+}
+.status-section ul li.current {
+    color:$over;
+}
+
+.status-section ul li small{
+    float: right;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+@media(max-width : 1065px){
+    .container{
+        max-width: 90%;
+    }
+}
