@@ -1,0 +1,9 @@
+{"_id":{"$oid":"5fce03b267f2b81c10f0d133"},
+"role":"worker",
+"name":"SSShyam",
+"username":"ksnkjndcjk",
+"email":"singh.devill@gmail.com",
+"password":"$2b$10$YrWfZu9oCucQ0InmwYE0deMGsHeH.dlI03R3TeTAsmQ19N7Vth0bO",
+"createdAt":{"$date":"2020-12-06T14:48:49.742Z"},
+"updatedAt":{"$date":"2020-12-06T14:48:49.742Z"},
+"__v":0}
